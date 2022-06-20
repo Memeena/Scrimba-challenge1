@@ -1,0 +1,227 @@
+:root {
+  --pink: #fbe6f4ff;
+  --yellow: #fffad1ff;
+  --green: #e1f0e5ff;
+  --blue: #b5caf9ff;
+  --orange: #f5e6db;
+  --raisin: #2b283aff;
+  --grey: #d4d4d4;
+}
+
+body {
+  background-color: var(--raisin);
+  color: white;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.orbit {
+  border: 1px dashed var(--grey);
+}
+
+#sun,
+.orbit,
+.orbit + div,
+.orbit + div > div {
+  position: absolute;
+}
+
+#sun,
+.orbit,
+.orbit + div {
+  top: 50%;
+  left: 50%;
+}
+.orbit + div > div {
+  top: 0;
+  left: 50%;
+}
+
+.orbit,
+.orbit + div div,
+#earth {
+  border-radius: 50%;
+}
+
+#sun {
+  height: 200px;
+  width: 200px;
+  background-color: #fae20a;
+  margin-top: -100px;
+  margin-left: -100px;
+  border-radius: 50%;
+  box-shadow: 0 0 84px orange;
+  z-index: 99999;
+}
+
+#mercury {
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.mercury-orbit,
+.mercury-spin {
+  width: 275px;
+  height: 275px;
+  margin-top: -140px;
+  margin-left: -140px;
+}
+
+#venus {
+  margin-left: -50px;
+  margin-top: -50px;
+}
+.venus-orbit,
+.venus-spin {
+  width: 375px;
+  height: 375px;
+  margin-top: -190px;
+  margin-left: -190px;
+}
+
+#earth {
+  margin-left: -75px;
+  margin-top: -75px;
+}
+
+.earth-orbit,
+.earth-spin {
+  width: 475px;
+  height: 475px;
+  margin-left: -240px;
+  margin-top: -240px;
+}
+
+#mars {
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.mars-orbit,
+.mars-spin {
+  width: 575px;
+  height: 575px;
+  margin-left: -290px;
+  margin-top: -290px;
+}
+
+#jupiter {
+  margin-left: 142px;
+  margin-top: -30px;
+}
+
+.jupiter-orbit,
+.jupiter-spin {
+  width: 700px;
+  height: 635px;
+  margin-left: -350px;
+  margin-top: -320px;
+}
+
+#saturn {
+  margin-left: 150px;
+  margin-top: -30px;
+}
+
+.saturn-orbit,
+.saturn-spin {
+  width: 775px;
+  height: 685px;
+  margin-left: -390px;
+  margin-top: -345px;
+}
+
+#uranus {
+  margin-left: 190px;
+  margin-top: -30px;
+}
+
+.uranus-orbit,
+.uranus-spin {
+  width: 875px;
+  height: 745px;
+  margin-left: -430px;
+  margin-top: -375px;
+}
+
+#neptune {
+  margin-left: 270px;
+  margin-top: -30px;
+}
+
+.neptune-orbit,
+.neptune-spin {
+  width: 975px;
+  height: 795px;
+  margin-left: -470px;
+  margin-top: -400px;
+}
+
+.planet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  z-index: 99999;
+}
+
+.planet:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 4px 8px rgba(255, 255, 0, 0.6);
+}
+
+.planet:hover > .info {
+  display: block;
+}
+
+.info {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@keyframes spin-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mercury-spin {
+  animation: spin-right 10.5s linear infinite;
+}
+
+.venus-spin {
+  animation: spin-right 35.5s linear infinite;
+}
+
+.earth-spin {
+  animation: spin-right 30.5s linear infinite;
+}
+
+.mars-spin {
+  animation: spin-right 25.5s linear infinite;
+}
+
+.jupiter-spin {
+  animation: spin-right 60.5s linear infinite;
+}
+
+.saturn-spin {
+  animation: spin-right 30.5s linear infinite;
+}
+
+.uranus-spin {
+  animation: spin-right 38.5s linear infinite;
+}
+
+.neptune-spin {
+  animation: spin-right 20.5s linear infinite;
+}
